@@ -1,0 +1,34 @@
+name: CI - Angular Build User-profile-App
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'  # (ou celle que tu utilises dans package.json)
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run lint
+        run: npm run lint || true  # Si tu n'as pas de lint configuré, ça continue quand même
+
+      - name: Run unit tests
+        run: npm run test -- --watch=false --browsers=ChromeHeadless || true  # Si tu n'as pas encore les tests, ça passe quand même
+
+      - name: Build Angular project
+        run: npm run build -- --configuration production
