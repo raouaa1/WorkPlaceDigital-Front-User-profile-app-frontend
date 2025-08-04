@@ -72,7 +72,8 @@
               "buildTarget": "user-profile-app:build:production"
             },
             "development": {
-              "buildTarget": "user-profile-app:build:development"
+              "buildTarget": "user-profile-app:build:development",
+               "port": 4206
             }
           },
           "defaultConfiguration": "development"
@@ -103,5 +104,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "a768753c-c806-47a9-8ec7-2bf6c2dd09fa"
   }
 }
