@@ -9,14 +9,14 @@ export interface UserDTO {
   email: string;
   password?: string;
   bio?: string;
-  imageUrl?: string;  // URL complète vers l'image (ex: http://localhost:8086/uploads/xxx.jpg)
+  imageUrl?: string;  
 }
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
-  private baseUrl = 'http://localhost:8086/api/user-profiles';
+  private baseUrl = 'http://localhost:8080/api/user-profiles';
 
   constructor(private http: HttpClient) {}
 

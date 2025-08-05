@@ -54,7 +54,8 @@ export class UserProfileComponent implements OnInit {
   }
 
   /** Soumission du formulaire de mise à jour */
-  onSubmit(): void {
+ onSubmit(): void {
+  if (confirm('Voulez-vous vraiment modifier ce profil ?')) {
     const formData = new FormData();
 
     // Ajout des champs texte
@@ -87,6 +88,8 @@ export class UserProfileComponent implements OnInit {
       }
     });
   }
+}
+
 
   /** Suppression du profil */
   onDelete(): void {

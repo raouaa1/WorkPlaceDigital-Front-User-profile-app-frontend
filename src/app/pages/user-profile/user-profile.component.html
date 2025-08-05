@@ -1,4 +1,10 @@
-<div class="profile-container" *ngIf="user; else loadingTpl">
+ <div style="display: flex; justify-content: center; margin-bottom: 12px;">
+    <a href="http://localhost:4200/dashboard" class="back-arrow" style="background: #8B0000; color: #fff; border-radius: 20px; padding: 6px 16px; text-decoration: none; font-weight: bold;">
+      &#8592;Retour au WorkPlace Digital
+    </a>
+  </div>
+ <div class="profile-container" *ngIf="user; else loadingTpl">
+
   <h2 class="title">👤 Mon Profil</h2>
 
   <div class="profile-card">
